@@ -246,13 +246,79 @@ def nombre_occurence(chaine:str, x:str) -> int:
 ###----------EXO_10----------###
 
 def est_palindrone(chaine:str):
-    pass
 
-
+    """
+    Cette fonction dis si un nombre est palindrome ou non.
+    >>> est_palindrone('kayak')
+    True
+    >>> est_palindrone('coucou')
+    False
+    >>> est_palindrone('Hello World!')
+    False
+    """
+    for i in range(0, int(len(chaine)/2)):
+        if chaine[i] != chaine[len(chaine)-i-1]:
+            return False
+    return True
 
 
 
 ###----------EXO_11----------###
+
+
+
+
+import turtle
+
+
+### Q1
+
+
+def carre(taille:int):
+    for i in range(0,4):
+        turtle.forward(taille)
+        turtle.right(90)
+carre(250)
+turtle.done()
+
+
+### Q2
+
+def octogone(taille:int):
+    i=0
+    while i < 4:
+        turtle.forward(taille)
+        turtle.right(90)
+        i = i+1
+octogone(250)
+turtle.done()
+
+
+### Q3
+
+def polygone(nb_cote:int) -> None:
+    angle=360./nb_cote
+    for k in range(nb_cote):
+        turtle.forward(100)
+        turtle.left(angle)
+polygone(8)
+turtle.done()
+
+
+
+### Q4
+
+def spiral_carre(taille:int) -> None:
+    while True:
+        turtle.forward(taille * 10)
+        turtle.right(90) 
+        taille = taille+1
+spiral_carre(5)
+turtle.done()
+
+
+
+
 
 
 if __name__ == "__main__":
